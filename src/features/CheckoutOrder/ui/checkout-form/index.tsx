@@ -12,6 +12,7 @@ import { getSubmittedCardProducts } from "../../lib/getSubmittedCartProducts";
 import { IContext } from "../../../../shared/types";
 import { AppContext } from "../../../../app/providers";
 import { useSendOrderData } from "../../hooks/useSendOrderData";
+import clsx from "clsx";
 
 const schema = z.object({
   phone: z
@@ -67,6 +68,11 @@ export const CheckoutForm = () => {
       );
     }
   };
+
+  const phoneInputStyle = clsx(style.input_field, errors.phone && style.error)
+  const addressInputStyle = clsx(style.input_field, errors.address && style.error)
+  const submitBtnStyle = clsx(style.submit_btn, (isPending || isSubmitting) && style.disabled_btn)
+
   return (
     <div>
       <h2 className={style.form_title}>Оформить заказ</h2>
@@ -78,7 +84,7 @@ export const CheckoutForm = () => {
           defaultValue={"+7"}
           placeholder="Ваш телефон"
           aria-invalid={errors.phone ? "true" : "false"}
-          className={`${style.input_field} ${errors.phone ? style.error : ""}`}
+          className={phoneInputStyle}
         />
 
         {errors.phone && errors.phone.message && (
@@ -91,9 +97,7 @@ export const CheckoutForm = () => {
           id="address"
           aria-invalid={errors.address ? "true" : "false"}
           placeholder="Ваш адрес"
-          className={`${style.input_field} ${
-            errors.address ? style.error : ""
-          }`}
+          className={addressInputStyle}
         />
         {errors.address && errors.address.message && (
           <FormInputError message={errors.address.message} />
@@ -115,9 +119,7 @@ export const CheckoutForm = () => {
         )}
 
         <Button
-          className={`${style.submit_btn} ${
-            isPending || (isSubmitting && style.disabled_btn)
-          }`}
+          className={submitBtnStyle}
           type="submit"
           disabled={isSubmitting || isPending}
         >

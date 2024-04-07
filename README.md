@@ -1,30 +1,15 @@
-# React + TypeScript + Vite
+# Shose-store-app
+Ссылка на задание: https://github.com/netology-code/ra16-diploma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ ## ⛏️ Стек проекта <a name = "built_using"></a>
+[![My Skills](https://skillicons.dev/icons?i=ts,vite,react,scss)](https://skillicons.dev)
+Архитектура проекта основана на методологии [FSD](https://feature-sliced.design/ru/) 
+- [Vite](https://react.dev/) - сборка
+- [Typescript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [TanStack query](https://tanstack.com/query/latest/docs/framework/react/overview) - менеджмент стора и работа с запросами
+- [React Router](https://github.com/remix-run/react-router) - роутинг
+- [axios](https://axios-http.com/ru/docs/intro) - выполнение запросов
+- [React hook Form](https://react-hook-form.com/) - работа с формами
+- [zod](https://zod.dev/) - валидация форм
+- [react-hot-toast](https://react-hot-toast.com/docs/toast) - ui-оповещения о действиях пользователя

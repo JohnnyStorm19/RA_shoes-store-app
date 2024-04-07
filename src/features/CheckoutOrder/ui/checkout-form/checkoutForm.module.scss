@@ -16,12 +16,10 @@
         padding: 1rem;
         border: 1px solid #dee2e6;
         border-radius: .5rem;
-    }
+    }   
     .error {
         border: 1px solid $danger-color;
-    }
-
-    
+    } 
 }
 
 .form_title {
@@ -33,7 +31,7 @@
 .submit_btn {
     @include btn-primary
 }
-.disabled_btn {
+.disabled_btn, .disabled_btn:hover {
     background: #dee2e6;
-    color: $danger-color;
+    border: none;
 }
