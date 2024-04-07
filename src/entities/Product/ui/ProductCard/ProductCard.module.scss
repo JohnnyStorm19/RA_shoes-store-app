@@ -1,0 +1,32 @@
+@import '/src/index.scss'; 
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.3% - 1rem);
+
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+.productCard_image {
+    max-width: 100%;
+    object-fit: contain; 
+}
+.productCard_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    flex: 1 1 auto;
+    text-align: start;
+    padding: 1.25rem;
+}
+.productCard_title {
+    margin-bottom: 1rem;
+}
+.productCard_price {
+    margin-bottom: 1rem;
+}
+
+.productCard_btn {
+    @include btn-primary;    
+}

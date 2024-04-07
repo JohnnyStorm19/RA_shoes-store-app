@@ -1,0 +1,5 @@
+@import '/src/index.scss'; 
+
+.btn__danger {
+    @include btn-primary
+}

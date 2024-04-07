@@ -1,0 +1,5 @@
+@import '/src/index.scss';
+
+.link {
+    @include link;
+}

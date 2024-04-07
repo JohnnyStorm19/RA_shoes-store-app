@@ -1,0 +1,16 @@
+@import '/src/index.scss';
+
+.filter {
+    font-size: 1.3rem;
+
+    & .filter_list {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    & .link {
+        @include link
+    }
+}

@@ -1,0 +1,17 @@
+.navbar {
+    & ul {
+        display: flex;
+    }
+}
+
+.navlink {
+    color: rgba(0, 0, 0, .5);
+    padding-inline: .5rem;
+
+    &:hover {
+        color: rgba(0, 0, 0, .9);
+    }
+}
+.active {
+    color: rgba(0, 0, 0, .9);
+}

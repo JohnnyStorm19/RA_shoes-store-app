@@ -1,0 +1,12 @@
+.error {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    padding: .3rem;
+    font-size: .7rem;
+    border-radius: 1rem;
+    background-color: crimson;
+    color: #fff;
+}

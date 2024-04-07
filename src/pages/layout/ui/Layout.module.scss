@@ -1,0 +1,13 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    
+    padding-inline: 2rem;
+    
+    & main {
+        flex: 1 1 auto;
+    }
+}

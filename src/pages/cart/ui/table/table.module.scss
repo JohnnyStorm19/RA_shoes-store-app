@@ -1,0 +1,15 @@
+@import '/src/index.scss';
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+        border: 1px solid #dee2e6;
+        border-collapse: collapse;
+        color: #212529;
+
+        text-align: left;
+        padding: .75rem;
+    }
+}

@@ -1,0 +1,1 @@
+export { useGetSingleItem } from "./useGetSinleItem";

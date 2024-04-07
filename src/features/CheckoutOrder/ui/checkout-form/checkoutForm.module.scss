@@ -1,0 +1,39 @@
+@import '/src/index.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-inline: auto;
+    padding: 1rem;
+    max-width: 50%;
+    border: 1px solid #dee2e6;
+
+    & label:not(:last-child) {
+        text-align: left;
+    }
+    & .input_field {
+        padding: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: .5rem;
+    }
+    .error {
+        border: 1px solid $danger-color;
+    }
+
+    
+}
+
+.form_title {
+    font-size: 2rem;
+}
+.aggrement_wrapper {
+    display: flex;
+}
+.submit_btn {
+    @include btn-primary
+}
+.disabled_btn {
+    background: #dee2e6;
+    color: $danger-color;
+}

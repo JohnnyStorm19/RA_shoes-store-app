@@ -1,0 +1,24 @@
+.about_page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    text-align: left;
+
+    & .page_title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    & .page_subtitle {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    & ol {
+        display: block;
+        margin-block: 1rem;
+        padding-inline-start: 40px;
+        & li {
+            list-style-type: decimal !important;
+        }
+    }
+}

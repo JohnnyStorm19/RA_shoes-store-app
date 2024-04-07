@@ -1,0 +1,29 @@
+.open_cart {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    background-image: url(/src/shared/assets/header-controls-sprite.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    & .cart_counter {
+        position: absolute;
+        right: -10px;
+        top: -5px;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+
+        color: #fff;
+        background: linear-gradient(90deg, #ff65a5 1.11%, #ff8076 100%);
+        box-shadow: 0px 2px 8px rgba(255, 101, 165, 0.6), inset 0px 1px 1px #ff8076;;
+        font-size: 11px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,22 @@
+@import '/src/index.scss';
+
+.td_index {
+    font-weight: bold;
+} 
+.delete_btn {
+    @include btn-danger;
+    width: fit-content;
+    padding: .5rem;
+    font-size: 1rem;
+    background: transparent;
+    color: $danger-color;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.last_row {
+    & .fullPrice_title {
+        text-align: right;
+    }
+}

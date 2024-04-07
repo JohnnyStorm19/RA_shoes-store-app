@@ -1,0 +1,21 @@
+@import '/src/index.scss';
+
+.contacts_page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & p {
+        text-align: left;
+    }
+    & a {
+        @include link;
+    }
+    & .page_title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    & .page_subtitle {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}

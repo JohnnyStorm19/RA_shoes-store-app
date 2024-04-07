@@ -1,0 +1,13 @@
+@import "/src/index.scss";
+
+.page_title {
+    font-size: 2rem;
+}
+.link_wrapper {
+    display: inline-block;
+    margin-top: 1rem;
+    .link {
+        @include btn-danger;
+    
+    }
+}
