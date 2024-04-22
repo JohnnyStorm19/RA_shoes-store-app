@@ -1,4 +1,4 @@
-import style from "./AddToCard.module.scss";
+import style from "./AddToCart.module.scss";
 
 import { useContext } from "react";
 import toast from "react-hot-toast";
@@ -9,13 +9,13 @@ import { Button } from "../../../shared/ui";
 import { IContext, IProductFull } from "../../../shared/types";
 import { AppContext } from "../../../app/providers/AppContextProvider";
 
-interface IAddToCard {
+interface IAddToCart {
   data: IProductFull;
   count: number;
   isSuccess: boolean;
 }
 
-export const AddToCart = ({ data, count, isSuccess }: IAddToCard) => {
+export const AddToCart = ({ data, count, isSuccess }: IAddToCart) => {
   const { cartProducts, setCartProducts } = useContext(AppContext) as IContext;
 
   const handleAddToCart = () => {
