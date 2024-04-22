@@ -7,6 +7,7 @@ import {
   SingleItemResponse,
   TopSalesResponse,
 } from "./types";
+import { globals } from "../config";
 
 export interface IRequestConfig {
   method: "get" | "post" | "put" | "delete";
@@ -38,7 +39,7 @@ async function makeRequest(config: AxiosRequestConfig): Promise<AxiosResponse> {
 const getRequestConfig = ({ method, url, data }: IRequestConfig) => {
   return {
     method: method,
-    baseURL: "http://localhost:7070/api",
+    baseURL: `${globals.baseUrl}/api`,
     url: url,
     headers: {
       accept: "application/json",
@@ -71,18 +72,20 @@ export const getAllItems = async (): Promise<CatalogueAllItemsResponse> => {
 export const getItemsByCategory = async (
   categoryId: number
 ): Promise<CategoriesResponse> => {
+  const params = new URLSearchParams({categoryId: categoryId.toString()});
   const requestConfig = getRequestConfig({
     method: "get",
-    url: `/items?categoryId=${categoryId}`,
+    url: `/items?${params}`,
   });
   return (await makeRequest(requestConfig)).data;
 };
 export const searchItemsByTitle = async (
   query: string
 ): Promise<CategoriesResponse> => {
+  const params = new URLSearchParams({q: query})
   const requestConfig = getRequestConfig({
     method: "get",
-    url: `/items?q=${query}`,
+    url: `/items?${params}`,
   });
   return (await makeRequest(requestConfig)).data;
 };
@@ -96,9 +99,10 @@ export const getSingleItem = async (
   return (await makeRequest(requestConfig)).data;
 };
 export const loadMore = async (offset: number): Promise<LoadMoreResponse> => {
+  const params = new URLSearchParams({offset: offset.toString()})
   const requestConfig = getRequestConfig({
     method: "get",
-    url: `/items?offset=${offset}`,
+    url: `/items?${params}`,
   });
   return (await makeRequest(requestConfig)).data;
 };
@@ -106,9 +110,11 @@ export const loadMoreByCategory = async (options: {
   categoryId: number;
   offset: number;
 }): Promise<LoadMoreResponse> => {
+  const {categoryId, offset} = options;
+  const params = new URLSearchParams({categoryId: categoryId.toString(), offset: offset.toString()});
   const requestConfig = getRequestConfig({
     method: "get",
-    url: `/items?categoryId=${options.categoryId}&offset=${options.offset}`,
+    url: `/items?${params}`,
   });
   return (await makeRequest(requestConfig)).data;
 };
