@@ -3,11 +3,10 @@ import style from "./AddToCart.module.scss";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 
-import { updateQuantity } from "../lib/updateQuantity";
-
 import { Button } from "../../../shared/ui";
 import { IContext, IProductFull } from "../../../shared/types";
 import { AppContext } from "../../../app/providers/AppContextProvider";
+import { updateOverallPrice, updateQuantity } from "../lib";
 
 interface IAddToCart {
   data: IProductFull;
@@ -36,7 +35,7 @@ export const AddToCart = ({ data, count, isSuccess }: IAddToCart) => {
       size: data.sizes.find((size) => size.available)?.size || "",
       quantity: count,
       price: data.price,
-      overallPrice: data.price * count,
+      overallPrice: updateOverallPrice(data.price, count),
     };
     setCartProducts((state) => [...state, newProduct]);
 

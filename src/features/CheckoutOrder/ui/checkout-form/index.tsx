@@ -8,11 +8,11 @@ import * as z from "zod";
 
 import toast from "react-hot-toast";
 import { Button, FormInputError } from "../../../../shared/ui";
-import { getSubmittedCardProducts } from "../../lib/getSubmittedCartProducts";
 import { IContext } from "../../../../shared/types";
 import { AppContext } from "../../../../app/providers";
 import { useSendOrderData } from "../../hooks/useSendOrderData";
 import clsx from "clsx";
+import { getSubmittedCardProducts } from "../../lib";
 
 const schema = z.object({
   phone: z
