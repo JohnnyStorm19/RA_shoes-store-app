@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import {
-  AppContext,
-  IContext,
+  AppContext
 } from "../../../app/providers/AppContextProvider";
 import { Button, Preloader } from "../../../shared/ui";
 import { useLoadMore, useLoadMoreBy } from "../hooks";
+import { IContext } from "../../../shared/types";
 
 export const LoadMore = () => {
   const { offset } = useContext(AppContext) as IContext;
@@ -41,7 +41,7 @@ export const LoadMore = () => {
           <Button
             type="button"
             className={style.loadMore_btn}
-            onClickHandler={handleLoadMoreClick}
+            onClick={handleLoadMoreClick}
           >
             Загрузить еще
           </Button>

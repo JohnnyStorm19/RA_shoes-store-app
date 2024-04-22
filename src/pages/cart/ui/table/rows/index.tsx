@@ -42,7 +42,7 @@ export const TableRows = ({ cartProducts, setCartProducts }: ITableRowsProps) =>
               <Button
                 type="button"
                 className={style.delete_btn}
-                onClickHandler={() => handleDeleteBtn(product.id)}
+                onClick={() => handleDeleteBtn(product.id)}
               >
                 Удалить
               </Button>

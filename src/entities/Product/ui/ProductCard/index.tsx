@@ -29,7 +29,6 @@ export const ProductCard = ({ card }: IProductCardProps) => {
           <Button
             type="button"
             className={style.productCard_btn}
-            onClickHandler={() => true}
           >
             Заказать
           </Button>

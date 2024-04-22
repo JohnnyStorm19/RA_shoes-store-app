@@ -3,9 +3,10 @@ import style from "./filter.module.scss";
 import { useContext, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { AppContext, IContext } from "../../app/providers/AppContextProvider";
+import { AppContext } from "../../app/providers/AppContextProvider";
 import { useGetAllItems, useGetCategories, useMutateByCategory } from "./hooks";
 import { GlobalError } from "../../shared/ui";
+import { IContext } from "../../shared/types";
 
 export const CatalogueFilter = () => {
   const { setOffset, offsetStep } = useContext(AppContext) as IContext;

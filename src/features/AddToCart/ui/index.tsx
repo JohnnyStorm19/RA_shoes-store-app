@@ -45,7 +45,7 @@ export const AddToCart = ({ data, count, isSuccess }: IAddToCart) => {
     <Button
       type="button"
       className={style.addToCard_btn}
-      onClickHandler={handleAddToCart}
+      onClick={handleAddToCart}
     >
       В корзину
     </Button>
