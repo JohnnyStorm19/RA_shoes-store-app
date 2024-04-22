@@ -6,25 +6,29 @@ import { getFullPrice } from "../../../lib/getFullPrice";
 import { ICartProduct } from "../../../../../shared/types";
 import { formatPrice } from "../../../../../shared/lib";
 import { Button } from "../../../../../shared/ui";
+import { globals } from "../../../../../shared/config";
 
 interface ITableRowsProps {
   cartProducts: ICartProduct[];
   setCartProducts: React.Dispatch<React.SetStateAction<ICartProduct[]>>;
 }
-const currency = import.meta.env.VITE_CURRENCY;
 
-export const TableRows = ({ cartProducts, setCartProducts }: ITableRowsProps) => {
+const { currency } = globals;
+
+export const TableRows = ({
+  cartProducts,
+  setCartProducts,
+}: ITableRowsProps) => {
   const fullPrice = getFullPrice({ cartProducts });
-  
-  const handleDeleteBtn = (id: number) => {
-    const deletedProduct = cartProducts.find(product => product.id === id);
-    if (deletedProduct) {
-      toast.error(`Удалено: ${deletedProduct.title}, пар: ${deletedProduct.quantity}`)
-    }
 
-    setCartProducts((prevProducts) => {
-      return prevProducts.filter((product) => product.id != id);
-    });
+  const handleDeleteBtn = (id: number) => {
+    const deletedProduct = cartProducts.find((product) => product.id === id);
+    if (deletedProduct) {
+      toast.error(
+        `Удалено: ${deletedProduct.title}, пар: ${deletedProduct.quantity}`
+      );
+      setCartProducts((prevProducts) => prevProducts.filter((product) => product.id != id));
+    }
   };
 
   return (
@@ -36,8 +40,12 @@ export const TableRows = ({ cartProducts, setCartProducts }: ITableRowsProps) =>
             <td>{product.title}</td>
             <td>{product.size}</td>
             <td>{product.quantity}</td>
-            <td>{formatPrice(product.price)} {currency}</td>
-            <td>{formatPrice(product.overallPrice)} {currency}</td>
+            <td>
+              {formatPrice(product.price)} {currency}
+            </td>
+            <td>
+              {formatPrice(product.overallPrice)} {currency}
+            </td>
             <td>
               <Button
                 type="button"
@@ -54,7 +62,9 @@ export const TableRows = ({ cartProducts, setCartProducts }: ITableRowsProps) =>
         <td colSpan={5} className={style.fullPrice_title}>
           Общая стоимость
         </td>
-        <td>{formatPrice(fullPrice)} {currency}</td>
+        <td>
+          {formatPrice(fullPrice)} {currency}
+        </td>
       </tr>
     </>
   );

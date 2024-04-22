@@ -8,10 +8,12 @@ import { EmptyCart } from "./empty-cart";
 import { AppContext } from "../../../app/providers";
 import { CheckoutForm } from "../../../features";
 import { IContext } from "../../../shared/types";
+import { useRefreshStorage } from "../../../shared/hooks";
 
 
 export const CartPage = () => {
   const { cartProducts } = useContext(AppContext) as IContext;
+  useRefreshStorage();
 
   return (
     <div className={style.page_container}>

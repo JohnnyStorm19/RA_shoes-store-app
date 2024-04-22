@@ -8,8 +8,10 @@ import { useGetSingleItem } from "./hooks";
 
 import { AddToCart } from "../../features";
 import { Preloader } from "../../shared/ui";
+import { useRefreshStorage } from "../../shared/hooks";
 
 export const ProductPage = () => {
+  useRefreshStorage();
   const { id } = useParams();
   const [count, setCount] = useState(1);
 
