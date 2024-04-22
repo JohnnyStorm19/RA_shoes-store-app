@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { Button } from "../../../../shared/ui";
 import { IProductCard } from "../../../../shared/types";
 import { formatPrice } from "../../../../shared/lib";
+import { globals } from "../../../../shared/config";
 
 interface IProductCardProps {
   card: IProductCard;
 }
-const currency = import.meta.env.VITE_CURRENCY;
+const currency = globals.currency;
 
 export const ProductCard = ({ card }: IProductCardProps) => {
   return (
