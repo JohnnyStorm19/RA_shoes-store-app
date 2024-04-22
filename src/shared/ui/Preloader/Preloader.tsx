@@ -1,4 +1,4 @@
-import style from './Preloader.module.scss'
+import style from "./Preloader.module.scss";
 
 export const Preloader = () => {
   return (
@@ -8,6 +8,5 @@ export const Preloader = () => {
       <span></span>
       <span></span>
     </div>
-  )
-}
-
+  );
+};

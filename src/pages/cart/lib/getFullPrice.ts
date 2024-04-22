@@ -1,11 +1,11 @@
-import { ICartProduct } from "../../../shared/types"
+import { ICartProduct } from "../../../shared/types";
 
 type GetFullPriceProps = {
-    cartProducts: ICartProduct[];
-}
+  cartProducts: ICartProduct[];
+};
 
-export const getFullPrice = ({cartProducts}: GetFullPriceProps) => {
-    return cartProducts
-        .map(product => product.overallPrice)
-        .reduce((acc, product) => acc += product, 0);
-}
+export const getFullPrice = ({ cartProducts }: GetFullPriceProps) => {
+  return cartProducts
+    .map((product) => product.overallPrice)
+    .reduce((acc, product) => (acc += product), 0);
+};

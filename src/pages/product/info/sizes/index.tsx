@@ -1,18 +1,18 @@
-import style from './Sizes.module.scss';
+import style from "./Sizes.module.scss";
 
 import { IProductFull } from "../../../../shared/types";
 
 interface SizesProps {
   data: IProductFull;
   count: number;
-  handleBtnClick: (e: React.SyntheticEvent<HTMLButtonElement>) => void
+  handleBtnClick: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
 
 export const Sizes = ({ data, count, handleBtnClick }: SizesProps) => {
   return (
     <div className={style.sizes_container}>
       <p>
-        Размеры в наличии: {" "}
+        Размеры в наличии:{" "}
         {data?.sizes.map((size) => {
           return (
             <span
@@ -27,7 +27,7 @@ export const Sizes = ({ data, count, handleBtnClick }: SizesProps) => {
         })}
       </p>
       <p>
-        Количество: {" "}
+        Количество:{" "}
         <span className={style.quantity}>
           <button data-type="decrement" onClick={handleBtnClick}>
             -

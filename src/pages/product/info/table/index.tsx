@@ -1,11 +1,11 @@
-import { IProductFull } from '../../../../shared/types';
-import style from './ProductTable.module.scss';
+import { IProductFull } from "../../../../shared/types";
+import style from "./ProductTable.module.scss";
 
 interface ProductTableProps {
-    data: IProductFull;
+  data: IProductFull;
 }
 
-export const ProductTable = ({data}: ProductTableProps) => {
+export const ProductTable = ({ data }: ProductTableProps) => {
   return (
     <table className={style.table}>
       <tbody>

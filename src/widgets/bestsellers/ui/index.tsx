@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import style from './bestsellers.module.scss';
+import style from "./bestsellers.module.scss";
 
 import { ProductsList } from "../../../entities";
 import { getTopSales } from "../../../shared/api";

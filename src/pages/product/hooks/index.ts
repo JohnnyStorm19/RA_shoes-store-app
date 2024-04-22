@@ -1,1 +1,1 @@
-export { useGetSingleItem } from "./useGetSinleItem";
+export { useGetSingleItem } from "./useGetSingleItem";

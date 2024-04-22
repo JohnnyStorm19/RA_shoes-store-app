@@ -1,17 +1,14 @@
 import { useContext } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import {
-  AppContext,
-  IContext,
-} from "../../../app/providers/AppContextProvider";
+import { AppContext } from "../../../app/providers/AppContextProvider";
 import { loadMoreByCategory } from "../../../shared/api";
-import { IProductCard } from "../../../shared/types";
+import { IContext, IProductCard } from "../../../shared/types";
 
 export const useLoadMoreBy = () => {
   const { offset, offsetStep, setOffset } = useContext(AppContext) as IContext;
   const client = useQueryClient();
-  
+
   return useMutation({
     mutationFn: loadMoreByCategory,
     onSuccess: (data) => {

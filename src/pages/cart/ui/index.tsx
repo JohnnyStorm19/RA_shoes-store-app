@@ -10,7 +10,6 @@ import { CheckoutForm } from "../../../features";
 import { IContext } from "../../../shared/types";
 import { useRefreshStorage } from "../../../shared/hooks";
 
-
 export const CartPage = () => {
   const { cartProducts } = useContext(AppContext) as IContext;
   useRefreshStorage();

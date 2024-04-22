@@ -29,7 +29,10 @@ export const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-        <TableRows cartProducts={cartProducts} setCartProducts={setCartProducts} />
+        <TableRows
+          cartProducts={cartProducts}
+          setCartProducts={setCartProducts}
+        />
       </tbody>
     </table>
   );

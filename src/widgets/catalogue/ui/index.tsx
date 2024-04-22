@@ -9,12 +9,11 @@ import { ProductsList } from "../../../entities";
 import { GlobalError, Preloader } from "../../../shared/ui";
 import { getAllItems } from "../../../shared/api";
 
-
 export const Catalogue = () => {
   const { data, isLoading, isSuccess, isError } = useQuery({
     queryFn: getAllItems,
     queryKey: ["products", "catalogue"],
-    staleTime: 1000 * 60
+    staleTime: 1000 * 60,
   });
   const [searchParams] = useSearchParams();
 
@@ -33,7 +32,6 @@ export const Catalogue = () => {
       {!isSearching && <LoadMore />}
 
       {isError && <GlobalError message="Error fetching catalogue items!" />}
-
     </section>
   );
 };

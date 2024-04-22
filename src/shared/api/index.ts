@@ -7,5 +7,5 @@ export {
   getSingleItem,
   loadMore,
   loadMoreByCategory,
-  sendOrderData
+  sendOrderData,
 } from "./clientAPI";

@@ -25,8 +25,8 @@ export const HeaderSearch = () => {
   const onSubmit = () => {
     setIsVisible(!isVisible);
     navigate(`/catalogue?q=${inputValue}`);
-    setInputValue('');
-  }
+    setInputValue("");
+  };
 
   return (
     <div className={style.form_container}>

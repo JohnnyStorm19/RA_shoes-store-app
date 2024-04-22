@@ -1,4 +1,4 @@
-import style from './ProductsList.module.scss';
+import style from "./ProductsList.module.scss";
 
 import { IProductCard } from "../../../../shared/types";
 import { ProductCard } from "../ProductCard";

@@ -12,10 +12,9 @@ type Inputs = {
   catalogueSearch: string;
 };
 
-
 export const CatalogueSearch = () => {
   const client = useQueryClient();
-  
+
   const { register, handleSubmit } = useForm<Inputs>();
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState(searchParams.get("q") || "");
@@ -49,10 +48,7 @@ export const CatalogueSearch = () => {
   }
 
   return (
-    <form
-      className={style.form}
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
       <input
         {...register("catalogueSearch", { required: "Пустое поле поиска" })}
         onChange={onChangeHandler}

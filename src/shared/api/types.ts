@@ -5,4 +5,4 @@ export type CatalogueAllItemsResponse = IProductCard[];
 export type SingleItemResponse = IProductFull;
 export type LoadMoreResponse = IProductCard[];
 export type CategoriesResponse = TCategory[];
-export type OrderFormData = IFormData; 
+export type OrderFormData = IFormData;

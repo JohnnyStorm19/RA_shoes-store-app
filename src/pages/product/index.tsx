@@ -46,7 +46,7 @@ export const ProductPage = () => {
               count={count}
               handleBtnClick={handleCountClick}
             />
-            
+
             <AddToCart count={count} data={data} isSuccess={isSuccess} />
           </div>
         )}

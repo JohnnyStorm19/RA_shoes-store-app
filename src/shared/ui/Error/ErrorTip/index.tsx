@@ -1,13 +1,9 @@
-import style from './Error.module.scss';
+import style from "./Error.module.scss";
 
 interface IErrorProps {
-    message: string; 
+  message: string;
 }
 
-export const ErrorTip = ({message}: IErrorProps) => {
-  return (
-    <div className={style.error}>
-      {message}
-    </div>
-  )
-}
+export const ErrorTip = ({ message }: IErrorProps) => {
+  return <div className={style.error}>{message}</div>;
+};

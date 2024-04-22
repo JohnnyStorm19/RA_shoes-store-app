@@ -27,7 +27,9 @@ export const TableRows = ({
       toast.error(
         `Удалено: ${deletedProduct.title}, пар: ${deletedProduct.quantity}`
       );
-      setCartProducts((prevProducts) => prevProducts.filter((product) => product.id != id));
+      setCartProducts((prevProducts) =>
+        prevProducts.filter((product) => product.id != id)
+      );
     }
   };
 

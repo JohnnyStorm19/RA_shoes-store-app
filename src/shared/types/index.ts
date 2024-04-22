@@ -27,18 +27,18 @@ export interface IProductFull extends IProductCard {
   sizes: Size[];
 }
 export type TCategory = {
-    id: number;
-    title: string
-}
+  id: number;
+  title: string;
+};
 
 export type ICartProduct = {
   id: number;
   title: string;
-  size: Size['size'];
+  size: Size["size"];
   quantity: number;
   price: number;
   overallPrice: number;
-}
+};
 
 export interface IContext {
   offset: number;
@@ -52,6 +52,6 @@ export interface IFormData {
   owner: {
     phone: string;
     address: string;
-  },
-  items: SendItem[]
+  };
+  items: SendItem[];
 }

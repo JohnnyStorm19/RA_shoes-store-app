@@ -1,4 +1,4 @@
-import style from './ContactsPage.module.scss';
+import style from "./ContactsPage.module.scss";
 
 export const ContactsPage = () => {
   return (

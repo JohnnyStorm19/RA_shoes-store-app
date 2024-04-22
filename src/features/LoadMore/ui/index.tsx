@@ -3,9 +3,7 @@ import style from "./LoadMore.module.scss";
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import {
-  AppContext
-} from "../../../app/providers/AppContextProvider";
+import { AppContext } from "../../../app/providers/AppContextProvider";
 import { Button, Preloader } from "../../../shared/ui";
 import { useLoadMore, useLoadMoreBy } from "../hooks";
 import { IContext } from "../../../shared/types";

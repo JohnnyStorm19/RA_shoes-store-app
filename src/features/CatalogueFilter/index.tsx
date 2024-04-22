@@ -16,7 +16,8 @@ export const CatalogueFilter = () => {
   );
 
   const { data, isSuccess, isError } = useGetCategories();
-  const { mutate: getByCategory, isError: itemsByCategoryError } = useMutateByCategory();
+  const { mutate: getByCategory, isError: itemsByCategoryError } =
+    useMutateByCategory();
   const { mutate: getByAll, isError: allItemsError } = useGetAllItems();
 
   const linkStyle = (id: number) => {

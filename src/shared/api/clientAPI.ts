@@ -12,7 +12,7 @@ import { globals } from "../config";
 export interface IRequestConfig {
   method: "get" | "post" | "put" | "delete";
   url: string;
-  data?: OrderFormData
+  data?: OrderFormData;
 }
 
 async function makeRequest(config: AxiosRequestConfig): Promise<AxiosResponse> {
@@ -44,7 +44,7 @@ const getRequestConfig = ({ method, url, data }: IRequestConfig) => {
     headers: {
       accept: "application/json",
     },
-    data
+    data,
   };
 };
 
@@ -72,7 +72,7 @@ export const getAllItems = async (): Promise<CatalogueAllItemsResponse> => {
 export const getItemsByCategory = async (
   categoryId: number
 ): Promise<CategoriesResponse> => {
-  const params = new URLSearchParams({categoryId: categoryId.toString()});
+  const params = new URLSearchParams({ categoryId: categoryId.toString() });
   const requestConfig = getRequestConfig({
     method: "get",
     url: `/items?${params}`,
@@ -82,7 +82,7 @@ export const getItemsByCategory = async (
 export const searchItemsByTitle = async (
   query: string
 ): Promise<CategoriesResponse> => {
-  const params = new URLSearchParams({q: query})
+  const params = new URLSearchParams({ q: query });
   const requestConfig = getRequestConfig({
     method: "get",
     url: `/items?${params}`,
@@ -99,7 +99,7 @@ export const getSingleItem = async (
   return (await makeRequest(requestConfig)).data;
 };
 export const loadMore = async (offset: number): Promise<LoadMoreResponse> => {
-  const params = new URLSearchParams({offset: offset.toString()})
+  const params = new URLSearchParams({ offset: offset.toString() });
   const requestConfig = getRequestConfig({
     method: "get",
     url: `/items?${params}`,
@@ -110,15 +110,20 @@ export const loadMoreByCategory = async (options: {
   categoryId: number;
   offset: number;
 }): Promise<LoadMoreResponse> => {
-  const {categoryId, offset} = options;
-  const params = new URLSearchParams({categoryId: categoryId.toString(), offset: offset.toString()});
+  const { categoryId, offset } = options;
+  const params = new URLSearchParams({
+    categoryId: categoryId.toString(),
+    offset: offset.toString(),
+  });
   const requestConfig = getRequestConfig({
     method: "get",
     url: `/items?${params}`,
   });
   return (await makeRequest(requestConfig)).data;
 };
-export const sendOrderData = async (formData: OrderFormData): Promise<AxiosResponse> => {
+export const sendOrderData = async (
+  formData: OrderFormData
+): Promise<AxiosResponse> => {
   const requestConfig = getRequestConfig({
     method: "post",
     url: `/order`,
